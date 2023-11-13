@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ## Ejecución
 Para ejecutar el programa, ejecutar el siguiente comando en la terminal:
 ```bash
-python hand_fingers.py
+python handa_fingers.py
 ```
 
 ## Demostración
