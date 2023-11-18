@@ -3,6 +3,10 @@
 
 
 # Proyecto de visión artificial
+<img src="./img/logo.webp" alt="robot" width="50%"/>
+<h1 style="color: #232323">Fingers <span style="color:#2ECC71" >Bot</span> </h1>
+
+
 
 ## Descripción
 Este proyecto consiste en un sistema de visión artificial que detecta la posición de la mano en un plano 2D y envía la información a un Arduino UNO para que este mueva un servomotor y recrear el movimiento en la protesis.
@@ -42,6 +46,14 @@ python handa_fingers.py
 Las solicitudes de extracción son bienvenidas. Para cambios importantes, abra un problema primero para discutir qué le gustaría cambiar.
 
 Asegúrese de actualizar las pruebas según corresponda.
+
+
+[Ver Modelo 3D](URL_de_tu_pagina_html)
+
+<iframe width="100%" height="600" src="img/Diagrama sin título.drawio"></iframe>
+
+
+
 
 ## Licencia
 [MIT](https://choosealicense.com/licenses/mit/)
