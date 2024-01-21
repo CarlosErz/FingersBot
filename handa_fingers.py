@@ -5,7 +5,7 @@ import serial
 import time
 #---------------------------------------------
 import math
-
+    
 # ---------------------------------------------
 # Configuración de OpenCV y MediaPipe
 # ---------------------------------------------
@@ -71,20 +71,22 @@ with mp_manos.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) a
                     landmarks.landmark[mp_manos.HandLandmark.RING_FINGER_TIP],
                     landmarks.landmark[mp_manos.HandLandmark.PINKY_TIP]
                 ]
-
+                
                 umbral_cierre = 0.19
+                umbral_cierre_gordo = 18
 
+                acciones_dedos = {
+                    'gordo': '0',
+                    'pinky': '0',
+                    'medio': '0',
+                    'indice': '0',
+                    'anular': '0'
+                }
              
                     
             for i, punto_dedo in enumerate(puntas_dedos):
                 dibujar_rectangulo_y_texto(frame, punto_dedo)
-              
-                    
-                    
-                
-            
                 distancia_gordo = calcular_distancia(puntas_dedos[0], landmarks.landmark[mp_manos.HandLandmark.WRIST])
-                
                 distancia_indice_palma = calcular_distancia(puntas_dedos[1], landmarks.landmark[mp_manos.HandLandmark.WRIST])
                 
                 distancia_middele = calcular_distancia(puntas_dedos[2], landmarks.landmark[mp_manos.HandLandmark.WRIST])
@@ -95,51 +97,28 @@ with mp_manos.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5) a
 
                
 
-                distancia_gordo = redondear_distancia(distancia_gordo)
+                distancia_gordo = distancia_gordo * 100
                 distancia_indice_palma = redondear_distancia(distancia_indice_palma)
                 distancia_middele = redondear_distancia(distancia_middele)
                 distancia_anular = redondear_distancia(distancia_anular)
                 distancia_pinky = redondear_distancia(distancia_pinky)
 
-                if time.time() - last_send_time > 1.0:
-                  
-                    if distancia_gordo > umbral_cierre:
-                        print("\033[91m" + "gordo levantado" + "\033[0m")
-                        # arduino.write(b'1')
-                    else:
-                        print("\033[92m" + "gordo abajo " + "\033[0m")
-                        # arduino.write(b'2')
-
-                    if distancia_pinky > umbral_cierre:
-                        print("\033[91m" + "pinky levantado" + "\033[0m")
-                    else:
-                        print("\033[92m" + "pinky medio abajo " + "\033[0m")
-
-                    if distancia_middele > umbral_cierre:
-                        print("\033[91m" + "Dedo medio levantado" + "\033[0m")
-                        # arduino.write(b'4')
-                    else:
-                        print("\033[92m" + "Dedo medio abajo " + "\033[0m")
-                        # arduino.write(b'3')
-
-                    if distancia_indice_palma > umbral_cierre:
-                        print("\033[91m" + "indice levantado" + "\033[0m")
-                        # arduino.write(b'5')
-                    else:
-                        print("\033[92m" + "indice abajo " + "\033[0m")
-                        # arduino.write(b'6')
-
-                    if distancia_anular > umbral_cierre:
-                        print("\033[91m" + "Anular levantado" + "\033[0m \n" )
-                        # arduino.write(b'8')
-                    else:
-                        print("\033[92m" + "Anular abajo " + "\033[0m \n" )
-                        
-                        
-                        # arduino.write(b'7')
-                      
-
-                    last_send_time = time.time()
+                if distancia_gordo <= umbral_cierre_gordo:
+                    acciones_dedos['gordo'] = '1'
+                if distancia_indice_palma <= umbral_cierre:
+                    acciones_dedos['indice'] = '1'
+                if distancia_middele <= umbral_cierre:
+                    acciones_dedos['medio'] = '1'
+                if distancia_anular <= umbral_cierre:
+                    acciones_dedos['anular'] = '1'
+                if distancia_pinky <= umbral_cierre:
+                    acciones_dedos['pinky'] = '1'
+                    
+                #arduino.write(f"{acciones_dedos['gordo']}{acciones_dedos['indice']}{acciones_dedos['medio']}{acciones_dedos['anular']}{acciones_dedos['pinky']}".encode())
+                
+                print(f"{acciones_dedos['gordo']}{acciones_dedos['indice']}{acciones_dedos['medio']}{acciones_dedos['anular']}{acciones_dedos['pinky']}")
+                
+                    
 
         cv2.imshow("Manos", frame)
 
