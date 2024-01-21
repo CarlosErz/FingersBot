@@ -3,7 +3,7 @@
 
 
 # Proyecto de visión artificial
-<img src="./img/logo.webp" alt="robot" width="50%"/>
+<img src="./img/logo_blanco.ico" alt="robot" width="50%"/>
 <h1 style="color: #232323">Fingers <span style="color:#2ECC71" >Bot</span> </h1>
 
 
