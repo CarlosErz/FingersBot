@@ -127,5 +127,3 @@ def hands_funcion(puerto_com, camara, cantidad_servo, get_ports, active_arduino)
 # ---------------------------------------------
 # Cierre de la conexión con Arduino
 # ---------------------------------------------
-
-# ... (resto del código)
