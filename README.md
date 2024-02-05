@@ -1,3 +1,4 @@
+
 <div aling="center">
  
 
@@ -20,7 +21,7 @@ pip install -r requirements.txt
 ## Ejecución
 Para ejecutar el programa, ejecutar el siguiente comando en la terminal:
 ```bash
-python handa_fingers.py
+python main.py
 ```
 
 ## Demostración
@@ -38,9 +39,9 @@ python handa_fingers.py
 ## Estado del proyecto
 - [x] Inicio del proyecto
 - [x] Desarrollo
-- [ ] Finalización
-- [ ] Documentación
-- [ ] Publicación
+- [x] Finalización
+- [x] Documentación
+- [x] Publicación
   
 ## Contribuciones
 Las solicitudes de extracción son bienvenidas. Para cambios importantes, abra un problema primero para discutir qué le gustaría cambiar.
@@ -50,9 +51,6 @@ Asegúrese de actualizar las pruebas según corresponda.
 
 [Ver Modelo 3D](URL_de_tu_pagina_html)
 
-<iframe width="100%" height="600" src="img/Diagrama sin título.drawio"></iframe>
-
-
 
 
 ## Licencia
@@ -61,11 +59,5 @@ Licencia MIT Copyright (c) [2023] [Carlos Emmanuel Rodriguez Saldaña] Por la pr
 - Dar crédito apropiado a [Carlos Emmanuel Rodriguez Saldaña], y a los contribuyentes, para el código fuente original.
 - No lucrar o vender copias del software, o partes del software.
 - No usar el codigo  para promocionar un producto sin permiso previo por escrito.
-
-
-
-
-
-
 
 </div>
