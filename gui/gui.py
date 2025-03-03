@@ -103,7 +103,7 @@ class GUI:
     def star_app(self):
         """Inicia la detección de manos, asegurando que la cámara sea un número válido"""
         if self.camara == "Buscando cámaras..." or not self.camara.isdigit():
-            self.camara = "0"  # 🔥 Si aún no se detectan cámaras, usar la cámara 0
+            self.camara = "0" 
             messagebox.showwarning("Advertencia", "No se detectaron cámaras, usando cámara 0 por defecto.")
 
         procesamiento_imagen = image_processing(self.puerto_com, int(self.camara), self.get_ports, self.active_arduino)
@@ -111,7 +111,6 @@ class GUI:
 
 
     def get_ports(self):
-        """Obtiene los puertos COM disponibles en segundo plano."""
         ports = [port.device for port in serial.tools.list_ports.comports()]
         return ports if ports else ["No se encontraron puertos COM"]
 
