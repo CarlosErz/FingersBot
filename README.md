@@ -31,7 +31,7 @@ python main.py
 </video>
 
 ## Requisitos
-- Python 3.6 o superior
+- Python 3.10 o inferior
 - OpenCV 4.5.1 o superior
 - Arduino IDE
 - Arduino UNO
