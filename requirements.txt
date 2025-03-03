@@ -1,7 +1,0 @@
-mediapipe==0.8.10.1
-opencv-python>=4.5.0
-customtkinter==5.2.2
-
-
-
-
