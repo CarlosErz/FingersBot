@@ -26,6 +26,9 @@ python main.py
 
 ## Demostración
  <img src="./img/show.webp" alt="show" width="100%"/>
+<video src="./img/video.mp4" width="100%" controls autoplay loop>
+    Tu navegador no soporta la etiqueta de video.
+</video>
 
 ## Requisitos
 - Python 3.6 o superior
@@ -48,8 +51,6 @@ Las solicitudes de extracción son bienvenidas. Para cambios importantes, abra u
 
 Asegúrese de actualizar las pruebas según corresponda.
 
-
-[Ver Modelo 3D](URL_de_tu_pagina_html)
 
 
 

@@ -1,0 +1,11 @@
+mediapipe>=0.10.21
+opencv-python>=4.11.0.86
+customtkinter==5.2.2
+pyserial>= 3.5
+
+
+#Para poder correr mediapipe necesita la version de python menor a el 10 o el 10 <=
+
+
+
+
